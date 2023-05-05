@@ -1,0 +1,31 @@
+.suggestion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  width: 530px;
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  padding-left: 24px;
+  padding-top: 8px;
+}
+
+.suggestion-item--focused,
+.suggestion-item--focused:hover {
+  background-color: #f1f1f1;
+}
+
+.suggestion-item-img {
+  margin-right: 12px;
+  width: 1rem;
+}

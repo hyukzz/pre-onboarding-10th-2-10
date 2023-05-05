@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import SuggestionItem from './SuggestionItem';
-import { MAX_SUGGESTIONS } from '../constants/constants';
+import { MAX_SUGGESTIONS } from '../../constants/constants';
+import './Suggestion.css';
 
 const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
   const suggestionListRef = useRef(null);
@@ -18,7 +19,7 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 
   return (
     <>
-      <ul ref={suggestionListRef}>
+      <ul className="suggestion-list" ref={suggestionListRef}>
         {suggestions.length <= MAX_SUGGESTIONS
           ? suggestions.map((suggestion, index) => (
               <SuggestionItem
