@@ -6,6 +6,7 @@ https://pre-onboarding-10th-2-10.vercel.app/
 <br>
 <br>
 cors에러 때문에 https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf을 설치하고 켜주세요.
+
 ## 프로젝트 시작 방법
 ### Repository Clone
 ```bash
@@ -28,6 +29,15 @@ npm start
 npm build
 ```
 
+## 프로젝트 시연
+<div>
+
+|                                                          1. 캐싱기능                                                          |                                                           2. 검색기능                                                           |                                                                                                              
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------:
+| <img src="https://user-images.githubusercontent.com/81045794/236623779-46390519-7e7a-4227-9d37-626bddc2c719.gif" width=425 /> | <img src="https://user-images.githubusercontent.com/81045794/236623984-ee42424a-c81f-4598-bad7-7652f9b1409c.gif" width=425 /> 
+
+</div>
+
 
 ## 과제 목적
 
@@ -49,7 +59,10 @@ npm build
 
 ## 상세 구현 내용
 
-### 1. 키보드만으로 추천 검색어들로 이동 가능하도록 구현
+<details>
+<summary> <h3>1. 키보드만으로 추천 검색어들로 이동 가능하도록 구현</h3> </summary>
+<div>
+
 ```javascript
 const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
   const suggestionListRef = useRef(null);
@@ -99,7 +112,6 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 - SuggestionList의 useEffect는 suggestions, setFocusedIndex 또는 MAX_SUGGESTIONS이 변경될 때마다 focusedIndex를 -2로 재설정하는 데 사용됩니다. 이는 컴포넌트가 처음 렌더링될 때 또는 검색어가 업데이트될 때 focus가 기존 검색어 위치에 맞춰지지 않도록 하는 데 사
 - renderedSuggestions 변수는 현재 startIndex 및 MAX_SUGGESTIONS를 기준으로 제안 배열을 슬라이스하는 데 사용됩니다. 이렇게 하면 한 번에 최대 수의 제안만 렌더링되므로 성능이 향상되고 검색어 목록이 너무 길어지는 것 방지
 
-
 ```javascript
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowDown') {
@@ -138,9 +150,13 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 	2. 가장 마지막 검색어에서 방향키 아래를 누를 시, 첫 검색어로 이동
 	3. 검색어는 최대 7개씩 화면에 보여줌. 그 이상의 검색어는 아래 방향키를 누를 때 노출
 
-<br />
+</div>
+</details>
 
-### 2. API 호출시 로컬 캐싱 구현하기
+<details>
+<summary> <h3>2. API 호출시 로컬 캐싱 구현하기</h3> </summary>
+<div>
+
 - 로컬 캐싱
 	- 캐싱 기능을 담당하는 Cache class를 정의
 		https://github.com/pre-onboarding-team10/pre-onboarding-10th-2-10/blob/4a75abd1ff39b760bcdc2d3f58265c4d5069b55f/src/apis/apiClient.js#L3-L41
@@ -156,9 +172,19 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 - expire time
 	- 캐싱 데이터가 생성된 시간을 Data 인스턴스 필드에 저장하여 API 호출 시점에 current time과 cached time을 비교하여 expired 여부 확인
 
-3. 입력마다 API 호출하지 않도록 API 호출 횟수 줄이기
+</div>
+</details>
+
+<details>
+<summary><h3>3. 입력마다 API 호출하지 않도록 API 호출 횟수 줄이기</h3></summary>
+<div>
+
 - debounce util 함수를 구현하여 추천 검색어 리스트 데이터를 페치하는 함수 실행을 딜레이
 	https://github.com/pre-onboarding-team10/pre-onboarding-10th-2-10/blob/4a75abd1ff39b760bcdc2d3f58265c4d5069b55f/src/utils/debounce.js#L1-L9
+
+</div>
+</details>
+
 
 # Team History
 
@@ -178,7 +204,7 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 
 # Tech Stack
 
-`React`, `Axios`, `http-proxy-middleware`
+`React`, `Axios`, `JavaScript`
 
 - 협업 도구: `Discord`, `Notion`, `Github`, `Zep`
 
@@ -222,28 +248,28 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
 <table border>
   <tbody>
     <tr>
-       <td align="center" width="200px">
+       <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/101001956?v=4"  alt="정민상님"/><br />
         <br/>
         <a href="https://github.com/jeongminsang">
           <img src="https://img.shields.io/badge/팀장 : 정민상-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src='https://avatars.githubusercontent.com/u/90402926?v=4'  alt="전종훈님"/><br />
         <br/>
         <a href="https://github.com/JunJongHun">
           <img src="https://img.shields.io/badge/전종훈-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/97023321?v=4"  alt="종아인님"/><br />
        <br/>
         <a href="https://github.com/04ian80">
           <img src="https://img.shields.io/badge/종아인-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/81045794?v=4"  alt="정윤혁님"/><br/>
                 <br/>
         <a href="https://github.com/hyukzz">
@@ -252,35 +278,35 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
       </td>
      </tr>
          <tr>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/77673029?v=4"  alt="최지미님"/><br />
        <br/>
         <a href="https://github.com/rabbit-22">
           <img src="https://img.shields.io/badge/최지미-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/83802168?v=4"  alt="문지웅님"/><br/>
        <br/>
         <a href="https://github.com/woongsnote">
           <img src="https://img.shields.io/badge/문지웅-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/106802169?v=4"  alt="양우진님"/><br/>
                 <br/>
         <a href="https://github.com/yan9vvoojin">
           <img src="https://img.shields.io/badge/양우진-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/59640337?v=4"  alt="전애지님"/><br/>
        <br/>
         <a href="https://github.com/AEJIJEON">
           <img src="https://img.shields.io/badge/전애지-000?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
-      <td align="center" width="200px">
+      <td align="center" width="240px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/97525377?v=4"  alt="백인빈님"/><br/>
        <br/>
         <a href="https://github.com/blueline1984">
