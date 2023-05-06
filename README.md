@@ -1,6 +1,9 @@
 # 원티드 프리온보딩 인턴십 2주차 과제
 추천 검색어를 제공하는 검색창을 구현하는 과제입니다.
 
+## 배포 주소
+https://pre-onboarding-10th-2-10.vercel.app/
+cors에러 때문에 https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf을 설치하고 켜주세요.
 ## 프로젝트 시작 방법
 ### Repository Clone
 ```bash
