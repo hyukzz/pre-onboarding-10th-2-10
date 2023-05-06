@@ -34,7 +34,7 @@ npm build
 
 |                                                          1. 캐싱기능                                                          |                                                           2. 검색기능                                                           |                                                                                                              
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------:
-| <img src="https://user-images.githubusercontent.com/81045794/236623779-46390519-7e7a-4227-9d37-626bddc2c719.gif" width=400 /> | <img src="https://user-images.githubusercontent.com/81045794/236623984-ee42424a-c81f-4598-bad7-7652f9b1409c.gif" width=400 /> 
+| <img src="https://user-images.githubusercontent.com/81045794/236623779-46390519-7e7a-4227-9d37-626bddc2c719.gif" width=380 /> | <img src="https://user-images.githubusercontent.com/81045794/236623984-ee42424a-c81f-4598-bad7-7652f9b1409c.gif" width=380 /> 
 
 </div>
 
