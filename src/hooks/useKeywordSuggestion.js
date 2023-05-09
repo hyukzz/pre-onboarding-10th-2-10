@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { apiClient } from '../apis/apiClient';
 import { debounce } from '../utils/debounce';
 
-const useKeywordSuggestion = (keyword) => {
+const useKeywordSuggestion = (keyword, { onSuccess } = {}) => {
   const [suggestions, setSuggestions] = useState([]);
 
   const fetchSuggestions = useCallback(
@@ -11,6 +11,9 @@ const useKeywordSuggestion = (keyword) => {
         if (name) {
           const response = await apiClient.getKeyword(name);
           setSuggestions(response.data);
+          if (onSuccess) {
+            onSuccess();
+          }
         } else {
           setSuggestions([]);
         }
@@ -23,7 +26,7 @@ const useKeywordSuggestion = (keyword) => {
 
   useEffect(() => {
     fetchSuggestions(keyword);
-  }, [keyword]);
+  }, [keyword, onSuccess]);
 
   return [suggestions];
 };
