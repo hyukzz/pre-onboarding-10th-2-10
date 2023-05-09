@@ -1,12 +1,7 @@
 import React from 'react';
 import './Suggestion.css';
 
-const SuggestionItem = ({
-  index,
-  focusedIndex,
-  setFocusedIndex,
-  suggestionName,
-}) => {
+const SuggestionItem = ({ index, focusedIndex, suggestionName }) => {
   const isFocused = index === focusedIndex;
   return (
     <li
@@ -14,7 +9,6 @@ const SuggestionItem = ({
       className={`suggestion-item ${
         isFocused ? 'suggestion-item--focused' : ''
       }`}
-      onClick={() => setFocusedIndex(index)}
     >
       <>
         <img
