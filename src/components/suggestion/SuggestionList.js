@@ -1,20 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import SuggestionItem from './SuggestionItem';
 import './Suggestion.css';
 
-const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
+const MAX_SUGGESTIONS = 7;
+
+const SuggestionList = ({ suggestions, focusedIndex }) => {
   const suggestionListRef = useRef(null);
-  const MAX_SUGGESTIONS = 7;
   const startIndex = Math.max(0, focusedIndex - MAX_SUGGESTIONS + 1);
 
   const renderedSuggestions = suggestions.slice(
     startIndex,
     startIndex + MAX_SUGGESTIONS
   );
-
-  useEffect(() => {
-    setFocusedIndex(-2);
-  }, [suggestions, setFocusedIndex, MAX_SUGGESTIONS]);
 
   return (
     <>
@@ -25,7 +22,6 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
                 key={index}
                 index={index}
                 focusedIndex={focusedIndex}
-                setFocusedIndex={setFocusedIndex}
                 suggestionName={suggestion.name}
               />
             ))
@@ -34,7 +30,6 @@ const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
                 key={index}
                 index={startIndex + index}
                 focusedIndex={focusedIndex}
-                setFocusedIndex={setFocusedIndex}
                 suggestionName={suggestion.name}
               />
             ))}
