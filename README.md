@@ -5,7 +5,7 @@
 https://pre-onboarding-10th-2-10.vercel.app/
 <br>
 <br>
-cors에러 때문에 https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf을 설치하고 켜주세요.
+cors에러 때문에 https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf 설치하고 켜주세요.
 
 ## 프로젝트 시작 방법
 ### Repository Clone
